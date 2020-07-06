@@ -18,6 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('api')->post('/api/save_buffer', function (Request $request) {
-    return $request->buffer;
-});
+//Route::middleware('api')->post('/api/save_buffer', function (Request $request) {
+//    return $request->buffer;
+//});
