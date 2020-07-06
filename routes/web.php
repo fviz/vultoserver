@@ -17,7 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::post('/save_buffer',  function  (Request $request)  {
-    return "aaa";
-});
