@@ -16,7 +16,7 @@ class CreateRecordsTable extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->id();
             $table->text("ip");
-            $table->longText("buffer");
+            $table->longText("buffer")->nullable();
             $table->timestamps();
         });
     }
