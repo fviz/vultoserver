@@ -18,6 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::middleware('api')->post('/api/save_buffer', function (Request $request) {
-//    return $request->buffer;
-//});
+Route::get('/save_buffer',  function  (Request $request)  {
+
+    return response()->json(['Hello Laravel 7']);
+
+});
