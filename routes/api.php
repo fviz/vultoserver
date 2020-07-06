@@ -33,7 +33,7 @@ Route::post('/save_buffer',  function  (Request $request)  {
         $foundRecord->save();
     }
 
-    $foundRecord->buffer = $buffer;
+    $foundRecord->buffer = json_encode($buffer);
     $foundRecord->save();
 
     return $foundRecord;
