@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/save_buffer',  function  (Request $request)  {
     $ip = $request->ip();
+    $buffer = $request->buffer;
 
     $foundRecord = \App\Record::where("ip", "=", $ip)->first();
     if (!$foundRecord) {
@@ -27,6 +28,9 @@ Route::post('/save_buffer',  function  (Request $request)  {
         $foundRecord->ip = $ip;
         $foundRecord->save();
     }
+
+    $foundRecord->buffer = $buffer;
+    $foundRecord->save();
 
     return $foundRecord;
 });
