@@ -24,6 +24,7 @@ Route::post('/save_buffer',  function  (Request $request)  {
     $foundRecord = \App\Record::where("ip", "=", $ip)->first();
     if (!$foundRecord) {
         $foundRecord = new \App\Record();
+        $foundRecord->ip = $ip;
         $foundRecord->save();
     }
 
