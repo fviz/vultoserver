@@ -19,5 +19,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/save_buffer',  function  (Request $request)  {
-    return "aa";
+    $ip = $request->ip();
+
+    $foundRecord = \App\Record::where("ip", "=", $ip)->first();
+    if (!$foundRecord) {
+        $foundRecord = new \App\Record();
+        $foundRecord->save();
+    }
+
+    return $foundRecord;
 });
