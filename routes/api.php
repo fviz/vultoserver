@@ -18,6 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('fetch', function(Request $request) {
+    return \App\Record::all()->random();
+});
+
 Route::post('/save_buffer',  function  (Request $request)  {
     $ip = $request->ip();
     $buffer = $request->buffer;
